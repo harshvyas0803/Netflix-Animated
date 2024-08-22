@@ -1,0 +1,96 @@
+
+
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.title-cards {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    position: relative; /* Ensure proper positioning of title and cards */
+    padding: 0 20px; /* Add padding for better layout control */
+}
+
+.title-cards h2 {
+    margin-bottom: 8px;
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold; /* Enhance visibility */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth title animation */
+}
+
+.card-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 10px 0; /* Padding for better visual spacing */
+    transition: transform 0.5s ease; /* Smooth scroll animation */
+}
+
+.card-list::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.card-list img {
+    width: 240px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow effect */
+}
+
+.card-list img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.card-list .card {
+    position: relative;
+}
+
+.card-list .card p {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px; /* Font size for card description */
+    transition: opacity 0.3s ease; /* Smooth opacity change */
+    opacity: 0; /* Initially hidden */
+}
+
+.card-list .card:hover p {
+    opacity: 1; /* Show text on card hover */
+}
+
+@media (max-width: 800px) {
+    .title-cards {
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .title-cards h2 {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .card-list img {
+        width: 200px;
+    }
+    .card-list p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title-cards h2 {
+        font-size: 15px;
+    }
+    .card-list img {
+        width: 165px;
+    }
+    .card-list p {
+        font-size: 10px;
+    }
+}
